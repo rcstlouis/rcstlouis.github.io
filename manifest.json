@@ -1,0 +1,17 @@
+{
+    "name": "Matthew St. Louis",
+    "short_name": "M St.L",
+    "icons": [{
+        "src": "https://fundacionelcano.github.io/tour/Images/WebIcons/MedRes.png",
+        "sizes": "128x128",
+        "type": "image/png"
+        }, {
+        "src": "https://fundacionelcano.github.io/tour/Images/WebIcons/HighRes.png",
+        "sizes": "512x512",
+        "type": "image/png"
+        }],
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0E0E0E",
+    "theme_color": "#AE954C"
+}
