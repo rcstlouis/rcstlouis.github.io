@@ -1,7 +1,21 @@
 body {
     font-family: "century gothic", sans-serif;
     color: lightblue;
+    color: #c0ffee;
+    color: #11eeaa;
+    color: #1ea1ea;
+    color: #b0ba1e;
+    color: #11ccee;
+    color: #1ce1ce;
+    color: #ba55e5;
+    color: #90091e;
     background-color: darkgrey;
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
 }
 
 
