@@ -17,33 +17,53 @@
         <meta name="theme-color" content="#ae954c"/>
 
         <!-- Styling -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="common.css" type="text/css">
+        <link id="theme" rel="stylesheet" href="light.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Roboto+Slab|Ubuntu&display=swap" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script src="themeswitch.js"></script>
     </head>
     <body>
         <h1>
-            Matthew St. Louis
+            Matthew St.&nbsp;Louis
         </h1>
         <p>
-            Welcome to my personal website! My name is Matthew St.&nbsp;Louis, and I am a student at Worcester Polytechnic Instute studying Computer Science.
+            Welcome to my personal website! My name is Matthew St.&nbsp;Louis, and I am a student at 
+            <a target="_blank" href=https://www.wpi.edu>Worcester Polytechnic Instute</a> studying Computer Science.
         </p>
+
+        <button id="themebutton" onclick="toggletheme()">Dark Theme</button>
+
         <h2>About Me</h2>
         <ul>
-            <li><a href="https://github.com/mastlouis">GitHub</a></li>
-            <li><a href="Matthew St. Louis - Resume.pdf">Résumé</a></li>
-            <li><a href="">LinkedIn</a></li>
-            <li><a href="">Handshake</a></li>
+            <li><a target="_blank" href="Matthew St. Louis - Resume.pdf">Résumé</a></li>
+            <li><a target="_blank" href="https://github.com/mastlouis">GitHub</a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/in/matthew-st-louis">LinkedIn</a></li>
+            <li><a target="_blank" href="https://wpi.joinhandshake.com/users/7835228">Handshake</a></li>
         </ul>
 
         <h2>Coding Projects and Coursework</h2>
         <ul>
             <li>
-                <a href = "https://play.google.com/store/apps/details?id=org.fundacionelcano.www">El Caño Archaeological Park App</a>
+                Software Engineering
+            </li>
+            <li>
+                Introduction to Cryptography
+            </li>
+            <li>
+                <a target="_blank" href = "https://play.google.com/store/apps/details?id=org.fundacionelcano.www">El Caño Archaeological Park App</a> (Interactive Qualifying Project)
+            </li>
             <ul>
-                <li>For the full source code, ask me by email. This project's sponsor wants to keep the source code inaccessible so that they can monetize the app's content.</li>
+                <li>
+                    For Details, see <a target="_blank" href = "https://web.wpi.edu/Pubs/E-project/Available/E-project-101019-135449/">E-Project Listing</a>.
+                </li>
             </ul>
             <li>
                 Operating Systems
+            </li>
+            <li>
+                Introduction to Database Systems
             </li>
             <li>
                 Intro to Machine Organization and Assembly Language
@@ -52,23 +72,14 @@
                 Systems Programming Concepts
             </li>
         </ul>
-        <h2>Non-Coding Coursework</h2>
+        <!-- <h2>Non-Coding Coursework</h2>
         <ul>
             <li>
-                <a>Interactive Qualifying Project (Link not yet available)</a>
+                <a target="_blank" href="https://web.wpi.edu/Pubs/E-project/Available/E-project-101019-135449/">Interactive Qualifying Project (IQP)</a>
             </li>
             <li>
-                <a href="https://medium.com/@mastlouis/matthew-st-louis-design-manifesto-faa082b205bb">Human Computer Interaction</a>
+                <a target="_blank" href="https://medium.com/@mastlouis/matthew-st-louis-design-manifesto-faa082b205bb">Human Computer Interaction</a>
             </li>
-        </ul>
-        <!-- <div class="topnav" id="myTopnav">
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div> -->
+        </ul> -->
     </body>
 </html>
