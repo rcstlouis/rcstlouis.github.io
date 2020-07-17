@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'mstl-welcome',
@@ -9,7 +10,9 @@ import { map } from 'rxjs/operators';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private _http: HttpClient) { }
+  projects: any;
+
+  constructor(private _http: HttpClient, private httpService: HttpService) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +37,18 @@ export class WelcomeComponent implements OnInit {
         window.open(fileURL);
       }
     );
+  }
+
+  getProjects(): void {
+    this.httpService.getProjectList().subscribe({
+      next: data => {
+        console.log(`Data in component: ${JSON.stringify(data)}`);
+        this.projects = data;
+      },
+      error: err => {
+        console.error(`Something went wrong in the component: ${JSON.stringify(err)}`);
+      }
+    });
   }
 
 }
