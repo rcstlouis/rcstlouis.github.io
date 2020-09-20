@@ -10,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProjectComponent implements OnInit {
 
-  readme = 'Failed to load README';
-  id = null // a1-gettingstarted
+  readme = 'No README Available';
+  id = null
   project: IProject = null;
 
   constructor(
@@ -21,17 +21,17 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( params => {
-      this.id = parseInt(params.get('id'));
+      this.id = params.get('id');
       this.loadProject(this.id);
     })
   }
 
-  loadProject(id: number) {
+  loadProject(id: string) {
     this.httpService.getProjectList().subscribe({
       next: projects => {
         console.log(`Data: ${JSON.stringify(this.project)}`);
         for (let project of projects) {
-          if (parseInt(project.id) === id) {
+          if (project.name === id) {
             this.project = project;
             this.loadReadme();
           }
