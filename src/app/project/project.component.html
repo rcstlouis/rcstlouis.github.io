@@ -1,8 +1,13 @@
-<h1> GitHub Project: {{name}} </h1>
-{{ description }}
+<button mat-flat-button color="primary" [routerLink]="['/projects']">
+  <mat-icon>keyboard_arrow_left</mat-icon> Back to All Projects
+</button>
+<h1> GitHub Project: {{ project.name }} </h1>
+{{ project.description ? project.description : 'No Description Available' }}
 
 <br><button mat-flat-button color="warn" (click)="debug()">Debug</button>
-
+<a mat-flat-button color="primary" [href]="project.html_url" target="_blank">
+  <mat-icon> link </mat-icon> View on Github
+</a>
 <h2>Readme</h2>
 <mat-card>
   <pre style="white-space: pre-wrap;">

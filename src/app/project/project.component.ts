@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { IProject } from '../model/project.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'mstl-project',
@@ -8,16 +10,40 @@ import { HttpService } from '../http.service';
 })
 export class ProjectComponent implements OnInit {
 
-  name = 'A1';
-  defaultBranch = 'master';
-  url = 'https://github.com/mastlouis/a1-gettingstarted';
   readme = 'Failed to load README';
-  description = 'The first assignment for CS4241';
+  id = null // a1-gettingstarted
+  project: IProject = null;
 
-  constructor(private httpService: HttpService) { }
+  constructor(
+    private httpService: HttpService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.httpService.getReadme(this.getUrlForRaw(this.url)).subscribe({
+    this.route.paramMap.subscribe( params => {
+      this.id = parseInt(params.get('id'));
+      this.loadProject(this.id);
+    })
+  }
+
+  loadProject(id: number) {
+    this.httpService.getProjectList().subscribe({
+      next: projects => {
+        console.log(`Data: ${JSON.stringify(this.project)}`);
+        for (let project of projects) {
+          if (parseInt(project.id) === id) {
+            this.project = project;
+            this.loadReadme();
+          }
+        }
+      }, error: err => {
+        console.error(`Problem loading the project data: ${JSON.stringify(err)}`);
+      }
+    })
+  }
+
+  loadReadme() {
+    this.httpService.getReadme(this.getUrlForRaw(this.project.html_url)).subscribe({
       next: (data: string) => {
         this.readme = data;
       },
@@ -29,7 +55,7 @@ export class ProjectComponent implements OnInit {
           console.error(`Error retrieving readme: ${err.message}`);
         }
       }
-    })
+    });
   }
 
   getUrlForRaw(url: string) {
@@ -37,7 +63,7 @@ export class ProjectComponent implements OnInit {
     // New Form `https://raw.githubusercontent.com/${user}/${project}/${branch}/README.md`
     return `https://raw.githubusercontent.com${
       url.substr(18, url.length - 18)
-    }/${this.defaultBranch}/README.md`;
+    }/${this.project.default_branch}/README.md`;
 
   }
 
