@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 // import { LostComponent } from './lost/lost.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'welcome' },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'project', component: ProjectComponent },
   // { path: '**', component: LostComponent },
 ];
 

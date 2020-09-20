@@ -18,4 +18,11 @@ export class HttpService {
       tap(data => console.log(`Data from Github: ${JSON.stringify(data)}`))
     )
   }
+
+  getReadme(url): Observable<string> {
+    return this._http.get<string>(url).pipe(
+      tap( data => console.log(`Truncated Readme: ${data.substr(0, 30)}`) )
+    );
+  }
+
 }

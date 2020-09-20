@@ -82,4 +82,9 @@ export class ProjectsComponent implements OnInit {
     window.open(url, "_blank");
   }
 
+  debug() {
+    debugger;
+    console.log(`Debug Data`);
+  }
+
 }

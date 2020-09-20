@@ -1,5 +1,7 @@
 <h1>Projects</h1>
 
+<button mat-flat-button color="warn" (click)="debug()">Debug</button><br>
+
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input
@@ -68,12 +70,12 @@
 
   <ng-container matColumnDef="created_at">
     <th mat-header-cell *matHeaderCellDef> Created At </th>
-    <td mat-cell *matCellDef="let element"> {{element.created_at}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.created_at | date }} </td>
   </ng-container>
 
   <ng-container matColumnDef="updated_at">
     <th mat-header-cell *matHeaderCellDef> Updated At </th>
-    <td mat-cell *matCellDef="let element"> {{element.updated_at}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.updated_at | date}} </td>
   </ng-container>
 
   <ng-container matColumnDef="language">
