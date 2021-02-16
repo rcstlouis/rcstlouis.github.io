@@ -1,17 +1,14 @@
-<h1>Projects</h1>
-
-<button mat-flat-button color="warn" (click)="debug()">Debug</button><br>
+<h1>GitHub Projects</h1>
 
 <br>
-<h2>GitHub Projects</h2>
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input
     matInput
     (keyup)="applyGitHubFilter($event)"
-    placeholder="Ex. ium"
     formControlName="filterControl"
     #gitHubInput>
+    <!-- placeholder="Ex. ium" -->
 </mat-form-field>
 <table mat-table [dataSource]="projectsSource" class="mat-elevation-z8">
 
