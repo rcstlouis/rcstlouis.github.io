@@ -2,3 +2,14 @@
   color: inherit;
   text-decoration: none;
 }
+
+.quick-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+
+mat-list-item a{
+  width: 100%;
+  justify-self: start;
+}

@@ -1,9 +1,12 @@
 <button mat-flat-button color="primary" [routerLink]="['/projects']">
   <mat-icon>keyboard_arrow_left</mat-icon> Back to All Projects
 </button>
+<br>
+<br>
 <h1> GitHub Project: {{ project.name }} </h1>
 {{ project.description ? project.description : 'No Description Available' }}
-
+<br>
+<br>
 <a mat-flat-button color="primary" [href]="project.html_url" target="_blank">
   <mat-icon> link </mat-icon> View on Github
 </a>

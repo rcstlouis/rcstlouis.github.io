@@ -15,7 +15,7 @@ export class HttpService {
   constructor(private _http: HttpClient) { }
 
   getProjectList(): Observable<IProject[]> {
-    const url = "https://api.github.com/users/mastlouis/repos";
+    const url = "https://api.github.com/users/rcstlouis/repos";
     return this._http.get<IProject[]>(url).pipe(
       tap(data => console.log(`Data from Github: ${JSON.stringify(data)}`))
     )
@@ -25,7 +25,7 @@ export class HttpService {
     if (this.projects) {
       return this.projects;
     }
-    const url = "https://api.github.com/users/mastlouis/repos";
+    const url = "https://api.github.com/users/rcstlouis/repos";
     this._http.get<IProject[]>(url).pipe(
       tap(data => console.log(`Data from Github: ${JSON.stringify(data)}`))
     ).subscribe({
